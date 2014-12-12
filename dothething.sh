@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-files=(       \
-  ".zshrc"    \
-  ".vimrc" \
+files=(        \
+  ".zshrc"     \
+  ".vimrc"     \
+  ".zshaliases"\
 )
 
 for i in "${files[@]}"
