@@ -55,7 +55,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 source $HOME/.zprofile
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
-export PATH="$GEM_HOME/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+export PATH="/opt/boxen/rbenv/shims:/opt/boxen/rbenv/bin:/opt/boxen/rbenv/plugins/ruby-build/bin:/opt/boxen/homebrew/bin:/usr/local/bin/:/usr/bin:/bin:/usr/sbin:/sbin"
 export EDITOR='emacsclient -a ""'
 source $HOME/.zshaliases
 chruby ruby-1.9
