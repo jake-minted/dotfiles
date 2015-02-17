@@ -56,17 +56,18 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.zprofile
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export GOPATH=~/dev/go
-export PATH="$GEM_HOME/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$GOPATH/bin"
+export PATH="$GEM_HOME/bin:$HOME/.local/bin:/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$GOPATH/bin"
 export EDITOR='emacsclient -a ""'
 source $HOME/.zshaliases
-chruby ruby-1.9
 export PYTHONPATH="/usr/lib/python2.7/site-packages/:$PYTHONPATH"
-export TERM=xterm-256color
 
-case $- in *i*)
-  if [ -z "$TMUX" ]; then exec tmux; fi;;
-esac
+#case $- in *i*)
+#  if [ -z "$TMUX" ]; then exec tmux; fi;;
+#esac
 
+vpc_ssh() {
+  ssh -o 'ProxyCommand ssh ec2-user@52.0.142.166 -i ~/.ssh/minted-ec2.pem nc %h %p' $@
+}
+
+source /opt/boxen/env.sh
 clear
-/usr/bin/python3 /usr/bin/archey3
-fortune -s
